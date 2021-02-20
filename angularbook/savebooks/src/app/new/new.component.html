@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Nuovo Book</h1>
+    <form #bookForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" class="form-control" id="nome" [(ngModel)]="book.nome" name="nome" required #nome="ngModel">
+        <div [hidden]="nome.valid || nome.pristine" class="alert alert-danger">
+          Name è richiesto
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Note</label>
+        <textarea class="form-control" id="note" [(ngModel)]="book.note" name="note" rows="3" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="name">Pagine</label>
+        <input type="number" class="form-control" [(ngModel)]="book.pages" name="pages" id="pagine" min=1 required>
+      </div>
+      <div class="form-group">
+        <label for="name">Segnalibro</label>
+        <input type="numbers" class="form-control" [(ngModel)]="book.currentPage" name="currentPage" id="segnalibro" min=1 required>
+      </div>
+      <div class="form-group">
+        <label for="name">Immagine</label>
+        <input type="file" class="form-control" id="immagine" (change)="readUrl($event)">
+        <img *ngIf="book.img" [src]="book.img" class="img-thumbnail" width="200">
+      </div>
+      <button type="submit" class="btn btn-default" [disabled]="!bookForm.form.valid">Submit</button>
+    </form>
+</div>

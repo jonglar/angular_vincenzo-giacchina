@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="panel panel-default" *ngFor="let book of books">
+    <div class="panel-heading">{{book.nome}} - <small>{{book.currentPage}} di {{book.pages}} pagine</small></div>
+    <div class="panel-body">
+      <blockquote>
+        {{book.note}}
+      </blockquote>
+      <img [src]=book.img class="img-thumbnail rounded float-right" width="150">
+    </div>
+  </div>
+</div>
