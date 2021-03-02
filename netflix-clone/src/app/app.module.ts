@@ -9,6 +9,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatBadgeModule } from '@angular/material/badge';
 import { SliderComponent } from './components/slider/slider.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     MatSliderModule,
     MatIconModule,
     MatBadgeModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
